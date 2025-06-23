@@ -1,15 +1,13 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Eye } from 'lucide-react';
-
 const HeroSection = () => {
   const scrollToForm = () => {
-    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('contact-form')?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <section className="hero-gradient min-h-screen flex items-center justify-center px-4 py-16">
+  return <section className="hero-gradient min-h-screen flex items-center justify-center px-4 py-16">
       <div className="container mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -33,11 +31,7 @@ const HeroSection = () => {
               restaurar sua visão. Descubra como podemos ajudar você a ver com nitidez novamente.
             </p>
             
-            <Button 
-              onClick={scrollToForm}
-              size="lg" 
-              className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            >
+            <Button onClick={scrollToForm} size="lg" className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
               Agendar Avaliação para Cirurgia
             </Button>
           </div>
@@ -45,11 +39,7 @@ const HeroSection = () => {
           {/* Hero Image */}
           <div className="relative">
             <div className="bg-gradient-to-br from-ocean-100 to-ocean-200 rounded-3xl p-8 shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Pessoa idosa sorrindo lendo um livro no jardim com visão clara"
-                className="w-full h-96 object-cover rounded-2xl shadow-lg"
-              />
+              <img alt="Pessoa idosa sorrindo lendo um livro no jardim com visão clara" className="w-full h-96 object-cover rounded-2xl shadow-lg" src="/lovable-uploads/2fb0b8ea-9810-4d76-9cec-166ad78ce249.jpg" />
               <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-xl shadow-lg">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-ocean-600">98%</div>
@@ -60,8 +50,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
