@@ -161,22 +161,22 @@ const ContactSection = () => {
                 <div className="flex items-start space-x-4">
                   <Phone className="text-teal-500 mt-1 flex-shrink-0" size={24} />
                   <div className="min-w-0 flex-1">
-                    <div className="font-semibold text-gray-900 break-words">(99) 3456-7890</div>
+                    <div className="font-semibold text-gray-900 break-words">(99) 98803-1379</div>
                     <div className="text-gray-600 text-sm">Segunda a Sexta, 8h às 18h</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
                   <Mail className="text-teal-500 mt-1 flex-shrink-0" size={24} />
                   <div className="min-w-0 flex-1">
-                    <div className="font-semibold text-gray-900 break-words">contato@clinicaoftalmologica.com.br</div>
+                    <div className="font-semibold text-gray-900 break-words">contato@drcarlosoftalmologista.com.br</div>
                     <div className="text-gray-600 text-sm">Respondemos em até 24h</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
                   <MapPin className="text-teal-500 mt-1 flex-shrink-0" size={24} />
                   <div className="min-w-0 flex-1">
-                    <div className="font-semibold text-gray-900 break-words">R. Cônego Mendonça</div>
-                    <div className="text-gray-600 text-sm">R. Cônego Mendonça, 314 - centro, Codó - MA, 65400-000</div>
+                    <div className="font-semibold text-gray-900 break-words">R. Cônego Mendonça, 314</div>
+                    <div className="text-gray-600 text-sm">Centro, Codó - MA, 65400-000</div>
                   </div>
                 </div>
               </div>
