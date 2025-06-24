@@ -143,9 +143,7 @@ const ContactSection = () => {
                 </RadioGroup>
               </div>
 
-              <Button type="submit" size="lg" className="w-full bg-teal-500 hover:bg-teal-600 text-white py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                Enviar e Agendar Minha Avaliação
-              </Button>
+              <Button type="submit" size="lg" className="w-full bg-teal-500 hover:bg-teal-600 text-white py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">Agendar Consulta</Button>
             </form>
           </Card>
 
