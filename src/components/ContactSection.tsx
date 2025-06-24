@@ -179,13 +179,8 @@ const ContactSection = () => {
             </Card>
 
             <Card className="p-8 bg-gradient-to-br from-teal-500 to-ocean-600 text-white">
-              <h3 className="text-2xl font-bold mb-4">
-                Avaliação Gratuita
-              </h3>
-              <p className="text-teal-100 leading-relaxed">
-                Nossa primeira consulta é completamente gratuita. Você receberá 
-                uma avaliação completa e um plano de tratamento personalizado.
-              </p>
+              <h3 className="text-2xl font-bold mb-4">Consulta</h3>
+              <p className="text-teal-100 leading-relaxed">Em nossa primeira consulta você receberá uma avaliação completa e um plano de tratamento personalizado.</p>
             </Card>
           </div>
         </div>
