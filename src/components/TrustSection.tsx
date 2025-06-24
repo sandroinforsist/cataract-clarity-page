@@ -79,7 +79,7 @@ const TrustSection = () => {
             </div>
             
             <div className="text-center">
-              <img alt="Dr. Carlos Mendonça - Cirurgião Oftalmologista" className="w-64 h-64 object-cover rounded-full mx-auto shadow-2xl" src="/lovable-uploads/050b5e86-d7d8-434d-a0f8-68be28c5baa4.jpg" />
+              <img alt="Dr. Carlos Mendonça - Cirurgião Oftalmologista" className="w-64 h-64 object-cover rounded-full mx-auto shadow-2xl" src="/lovable-uploads/9e8bf759-904c-42f0-a1b2-6693e975fcb6.png" />
               <div className="mt-6 p-4 bg-ocean-50 rounded-xl">
                 <div className="text-2xl font-bold text-ocean-600">CRM MA 10871</div>
                 <div className="text-sm text-gray-600">Especialista em Cirurgia de Catarata</div>
