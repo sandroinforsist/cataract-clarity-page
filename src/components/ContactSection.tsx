@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -6,6 +7,7 @@ import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { CheckCircle, Phone, Mail, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -13,25 +15,23 @@ const ContactSection = () => {
     interest: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {
-      name,
-      value
-    } = e.target;
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
+
   const handleInterestChange = (value: string) => {
     setFormData(prev => ({
       ...prev,
       interest: value
     }));
   };
+
   const formatWhatsApp = (value: string) => {
     const cleaned = value.replace(/\D/g, '');
     const match = cleaned.match(/^(\d{2})(\d{5})(\d{4})$/);
@@ -40,6 +40,7 @@ const ContactSection = () => {
     }
     return value;
   };
+
   const handleWhatsAppChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const formatted = formatWhatsApp(e.target.value);
     setFormData(prev => ({
@@ -47,6 +48,7 @@ const ContactSection = () => {
       whatsapp: formatted
     }));
   };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.whatsapp || !formData.interest) {
@@ -57,6 +59,7 @@ const ContactSection = () => {
       });
       return;
     }
+
     console.log('Form submitted:', formData);
     setIsSubmitted(true);
     toast({
@@ -64,8 +67,10 @@ const ContactSection = () => {
       description: "Nossa equipe entrará em contato em breve."
     });
   };
+
   if (isSubmitted) {
-    return <section id="contact-form" className="py-20 px-4 bg-gradient-to-br from-teal-50 to-ocean-50">
+    return (
+      <section id="contact-form" className="py-20 px-4 bg-gradient-to-br from-teal-50 to-ocean-50">
         <div className="container mx-auto max-w-2xl">
           <Card className="p-8 md:p-12 bg-white shadow-2xl text-center">
             <CheckCircle className="text-teal-500 mx-auto mb-6" size={64} />
@@ -82,9 +87,12 @@ const ContactSection = () => {
             </div>
           </Card>
         </div>
-      </section>;
+      </section>
+    );
   }
-  return <section id="contact-form" className="py-20 px-4 bg-gradient-to-br from-teal-50 to-ocean-50">
+
+  return (
+    <section id="contact-form" className="py-20 px-4 bg-gradient-to-br from-teal-50 to-ocean-50">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -99,21 +107,39 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Formulário */}
-          <div className="w-full">
-            <Card className="p-6 md:p-8 bg-white shadow-2xl w-full">
+          <div className="w-full flex justify-center">
+            <Card className="p-6 md:p-8 bg-white shadow-2xl w-full max-w-lg lg:max-w-none">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <Label htmlFor="name" className="text-lg font-medium text-gray-700">
                     Nome Completo *
                   </Label>
-                  <Input id="name" name="name" type="text" value={formData.name} onChange={handleInputChange} className="mt-2 p-4 text-lg border-2 border-gray-200 focus:border-teal-500 w-full" placeholder="Digite seu nome completo" required />
+                  <Input 
+                    id="name" 
+                    name="name" 
+                    type="text" 
+                    value={formData.name} 
+                    onChange={handleInputChange} 
+                    className="mt-2 p-4 text-lg border-2 border-gray-200 focus:border-teal-500 w-full" 
+                    placeholder="Digite seu nome completo" 
+                    required 
+                  />
                 </div>
 
                 <div>
                   <Label htmlFor="whatsapp" className="text-lg font-medium text-gray-700">
                     WhatsApp *
                   </Label>
-                  <Input id="whatsapp" name="whatsapp" type="tel" value={formData.whatsapp} onChange={handleWhatsAppChange} className="mt-2 p-4 text-lg border-2 border-gray-200 focus:border-teal-500 w-full" placeholder="(11) 99999-9999" required />
+                  <Input 
+                    id="whatsapp" 
+                    name="whatsapp" 
+                    type="tel" 
+                    value={formData.whatsapp} 
+                    onChange={handleWhatsAppChange} 
+                    className="mt-2 p-4 text-lg border-2 border-gray-200 focus:border-teal-500 w-full" 
+                    placeholder="(11) 99999-9999" 
+                    required 
+                  />
                 </div>
 
                 <div>
@@ -144,7 +170,11 @@ const ContactSection = () => {
                   </RadioGroup>
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-teal-500 hover:bg-teal-600 text-white py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full bg-teal-500 hover:bg-teal-600 text-white py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                >
                   Agendar Consulta
                 </Button>
               </form>
@@ -152,8 +182,8 @@ const ContactSection = () => {
           </div>
 
           {/* Informações de Contato */}
-          <div className="space-y-6 lg:space-y-8 w-full">
-            <Card className="p-6 md:p-8 bg-white shadow-lg w-full">
+          <div className="space-y-6 lg:space-y-8 w-full flex flex-col items-center lg:items-stretch">
+            <Card className="p-6 md:p-8 bg-white shadow-lg w-full max-w-lg lg:max-w-none">
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">
                 Entre em Contato
               </h3>
@@ -182,7 +212,7 @@ const ContactSection = () => {
               </div>
             </Card>
 
-            <Card className="p-6 md:p-8 bg-gradient-to-br from-teal-500 to-ocean-600 text-white w-full">
+            <Card className="p-6 md:p-8 bg-gradient-to-br from-teal-500 to-ocean-600 text-white w-full max-w-lg lg:max-w-none">
               <h3 className="text-xl md:text-2xl font-bold mb-4">Consulta</h3>
               <p className="text-teal-100 leading-relaxed">
                 Em nossa primeira consulta você receberá uma avaliação completa e um plano de tratamento personalizado.
@@ -191,6 +221,8 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default ContactSection;
