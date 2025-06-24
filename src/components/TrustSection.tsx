@@ -61,8 +61,8 @@ const TrustSection = () => {
         <Card className="p-8 lg:p-12 bg-white shadow-xl">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div className="text-center lg:text-left">
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">Dr. Carlos Augusto</h3>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">Com 5 anos de experiência e mais de 5.000 cirurgias de catarata bem-sucedidas, o Dr. Carlos Mendonça é referência em oftalmologia cirúrgica, combinando técnica apurada e atendimento humanizado.</p>
+              <h3 className="text-3xl font-bold text-gray-900 mb-6">Dr. Carlos Coelho</h3>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">Com 5 anos de experiência e mais de 5.000 cirurgias de catarata bem-sucedidas, o Dr. Carlos Coelho é referência em oftalmologia cirúrgica, combinando técnica apurada e atendimento humanizado.</p>
               
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">

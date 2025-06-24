@@ -37,7 +37,7 @@ const HeroSection = () => {
           {/* Hero Image */}
           <div className="relative">
             <div className="bg-gradient-to-br from-ocean-100 to-ocean-200 rounded-3xl p-8 shadow-2xl">
-              <img alt="Pessoa idosa sorrindo lendo um livro no jardim com visão clara" className="w-full h-96 object-cover rounded-2xl shadow-lg" src="/lovable-uploads/2fb0b8ea-9810-4d76-9cec-166ad78ce249.jpg" />
+              <img alt="Pessoa idosa sorrindo lendo um livro no jardim com visão clara" className="w-full h-96 object-cover rounded-2xl shadow-lg" src="/lovable-uploads/0b343642-1f86-492a-813f-1067550ceb9d.jpg" />
               <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-xl shadow-lg">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-ocean-600">98%</div>
