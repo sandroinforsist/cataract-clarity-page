@@ -31,9 +31,7 @@ const HeroSection = () => {
               restaurar sua visão. Descubra como podemos ajudar você a ver com nitidez novamente.
             </p>
             
-            <Button onClick={scrollToForm} size="lg" className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              Agendar Avaliação para Cirurgia
-            </Button>
+            <Button onClick={scrollToForm} size="lg" className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">Agendar Consulta</Button>
           </div>
           
           {/* Hero Image */}
