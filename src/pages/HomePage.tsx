@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Eye, Glasses, Heart, Baby, FileText } from 'lucide-react';
+import { Eye, AlertTriangle, Stethoscope, Zap, Heart } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { useBookingStore } from '@/store/bookingStore';
 
@@ -14,42 +14,54 @@ const HomePage = () => {
     openModal();
   };
 
-  const services = [
+  const symptoms = [
+    "Visão embaçada? Dificuldade para ler placas de trânsito ou as letras miúdas de um livro.",
+    "Dores de cabeça frequentes? Elas podem estar relacionadas a um esforço excessivo da visão.",
+    "Sensibilidade à luz ou olhos lacrimejando? Pode ser um sinal de irritação ou outras condições.",
+    "\"Areia\" nos olhos ou vermelhidão? Sintomas comuns que precisam de avaliação.",
+    "Percebeu \"moscas\" voando na visão? Pontinhos ou manchas que se movem no seu campo de visão."
+  ];
+
+  const exams = [
     {
-      icon: Glasses,
-      title: "Refração (Grau dos Óculos)",
-      description: "Exames para identificar miopia, hipermetropia, astigmatismo e presbiopia. Avaliação completa da sua necessidade visual.",
-      buttonText: "Quero consultar sobre minha visão",
-      reason: "Consulta para avaliação de grau dos óculos"
+      title: "Avaliação de Grau (Refração)",
+      description: "Para definirmos com precisão se você precisa de óculos e qual a lente ideal para o seu caso."
     },
     {
-      icon: Eye,
-      title: "Pressão Intraocular e Glaucoma",
-      description: "Prevenção e diagnóstico precoce do glaucoma através do controle da pressão intraocular. Proteja sua visão.",
-      buttonText: "Avaliar minha pressão ocular",
-      reason: "Consulta para avaliação de pressão ocular"
+      title: "Medição da Pressão Ocular (Tonometria)",
+      description: "Essencial para a prevenção do glaucoma, uma doença silenciosa que pode levar à cegueira."
     },
     {
-      icon: Heart,
-      title: "Fundo de Olho e Retinopatias",
-      description: "Exame essencial para detectar retinopatia diabética, hipertensiva e outras doenças que afetam a retina.",
-      buttonText: "Fazer exame de fundo de olho",
-      reason: "Consulta para exame de fundo de olho"
+      title: "Mapeamento de Retina",
+      description: "Um exame detalhado do \"fundo do olho\", que nos permite avaliar a saúde das veias, artérias e do seu nervo óptico."
     },
     {
-      icon: Baby,
-      title: "Teste do Olhinho",
-      description: "Exame neonatal obrigatório para detectar precocemente problemas oculares em recém-nascidos e crianças.",
-      buttonText: "Consultar sobre o teste do olhinho",
-      reason: "Consulta sobre teste do olhinho"
-    },
-    {
-      icon: FileText,
-      title: "Laudos e Atestados Oftalmológicos",
-      description: "Documentos médicos com validade legal para CNH, concursos, trabalho e outras necessidades específicas.",
-      buttonText: "Solicitar laudo oftalmológico",
-      reason: "Consulta para laudo oftalmológico"
+      title: "Avaliação para Cirurgias",
+      description: "Se você pensa em se livrar dos óculos com a cirurgia refrativa ou precisa de uma cirurgia de catarata, fazemos todos os exames para garantir um procedimento seguro e eficaz."
     }
+  ];
+
+  const treatments = [
+    {
+      title: "Cirurgia de Catarata",
+      description: "Substituímos a lente natural opaca do olho por uma nova, moderna e transparente, devolvendo a clareza e as cores à sua visão."
+    },
+    {
+      title: "Cirurgia Refrativa a Laser",
+      description: "Quer mais liberdade sem óculos? Este procedimento rápido e seguro pode corrigir miopia, astigmatismo e hipermetropia."
+    },
+    {
+      title: "Tratamentos para Glaucoma e Doenças da Retina",
+      description: "Oferecemos desde o tratamento com colírios até procedimentos a laser para controlar doenças e preservar sua visão a longo prazo."
+    }
+  ];
+
+  const tips = [
+    "Proteja-se do sol: Use óculos de sol com proteção UV. Eles são um acessório de saúde!",
+    "Faça pausas das telas: A cada hora no computador ou celular, desvie o olhar por 20 segundos para um objeto distante. Seus olhos agradecem.",
+    "Alimente sua visão: Alimentos ricos em vitaminas A, C e E, como vegetais de folhas escuras e cenoura, são ótimos para a saúde ocular.",
+    "Evite coçar os olhos: Este hábito pode causar irritações e até deformar a córnea.",
+    "Visite seu oftalmologista: A prevenção é sempre o melhor caminho. Uma consulta anual garante que sua visão esteja sempre em boas mãos."
   ];
 
   return (
@@ -82,31 +94,138 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-            Especialidades e Exames Oftalmológicos
-          </h2>
+      {/* Seção 1: Bem-vindo */}
+      <section className="py-16 px-4 bg-white">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <Eye className="mx-auto mb-6 text-teal-600" size={48} />
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Bem-vindo! Seus olhos contam a sua história, e nós ajudamos a cuidar dela.
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              Você já parou para pensar em como a sua visão é preciosa? É através dos seus olhos que você vê o mundo, as pessoas que ama e os momentos que importam. A oftalmologia é a especialidade da medicina que se dedica a proteger esse sentido tão valioso. Mais do que tratar doenças, nosso objetivo é garantir que você tenha qualidade de vida e enxergue cada detalhe do seu caminho. Cuidar dos seus olhos é cuidar de você. Vamos juntos nessa jornada?
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção 2: Sinais de Alerta */}
+      <section className="py-16 px-4 bg-gradient-to-br from-orange-50 to-red-50">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <AlertTriangle className="mx-auto mb-6 text-orange-600" size={48} />
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Está na hora de agendar uma consulta? Fique de olho nestes sinais.
+            </h2>
+            <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
+              Muitas vezes, nossos olhos dão pequenos sinais de que algo precisa de atenção. Se você notar algum destes sintomas, não hesite em nos procurar. Um diagnóstico precoce faz toda a diferença!
+            </p>
+          </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="p-6 bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="text-center">
-                  <div className="bg-teal-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <service.icon className="text-teal-600" size={32} />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-                  <Button
-                    onClick={() => handleBooking(service.reason)}
-                    className="w-full bg-teal-500 hover:bg-teal-600 text-white font-medium py-2 rounded-lg transition-colors duration-300"
-                  >
-                    {service.buttonText}
-                  </Button>
-                </div>
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {symptoms.map((symptom, index) => (
+              <Card key={index} className="p-6 bg-white shadow-lg hover:shadow-xl transition-all duration-300">
+                <p className="text-gray-700 leading-relaxed">{symptom}</p>
               </Card>
             ))}
+          </div>
+          
+          <div className="text-center">
+            <p className="text-lg font-semibold text-gray-900 mb-4">Identificou algum desses sinais?</p>
+            <Button 
+              onClick={() => handleBooking("Consulta para avaliação de sintomas")}
+              size="lg" 
+              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg"
+            >
+              Agende sua consulta aqui
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção 3: Tecnologia e Cuidado */}
+      <section className="py-16 px-4 bg-white">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <Stethoscope className="mx-auto mb-6 text-teal-600" size={48} />
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Tecnologia e Cuidado: O que esperar da sua consulta?
+            </h2>
+            <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
+              Entendemos que uma visita ao médico pode gerar dúvidas. Fique tranquilo! O Dr. Carlos Coelho utiliza tecnologia de ponta para realizar um diagnóstico preciso e confortável. Em sua consulta, podemos realizar exames como:
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {exams.map((exam, index) => (
+              <Card key={index} className="p-6 bg-gradient-to-br from-teal-50 to-cyan-50 shadow-lg hover:shadow-xl transition-all duration-300">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{exam.title}</h3>
+                <p className="text-gray-700 leading-relaxed">{exam.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Seção 4: Soluções Modernas */}
+      <section className="py-16 px-4 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <Zap className="mx-auto mb-6 text-blue-600" size={48} />
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Soluções Modernas para Você Voltar a Enxergar o Mundo com Nitidez
+            </h2>
+            <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
+              A oftalmologia evoluiu muito, e hoje o Dr. Carlos Coelho oferece tratamentos modernos e minimamente invasivos para as mais diversas condições. Nosso foco é encontrar a melhor solução para você e seu estilo de vida.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {treatments.map((treatment, index) => (
+              <Card key={index} className="p-6 bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{treatment.title}</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">{treatment.description}</p>
+                <Button
+                  onClick={() => handleBooking(`Consulta sobre ${treatment.title.toLowerCase()}`)}
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 rounded-lg transition-colors duration-300"
+                >
+                  Saiba mais
+                </Button>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Seção 5: Dicas de Ouro */}
+      <section className="py-16 px-4 bg-gradient-to-br from-green-50 to-emerald-50">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <Heart className="mx-auto mb-6 text-green-600" size={48} />
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Dicas de Ouro para a Saúde da sua Visão
+            </h2>
+            <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
+              Cuidar dos olhos no dia a dia é mais simples do que parece e faz um bem enorme! Adote estes hábitos e preserve sua visão:
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {tips.map((tip, index) => (
+              <Card key={index} className="p-6 bg-white shadow-lg hover:shadow-xl transition-all duration-300">
+                <p className="text-gray-700 leading-relaxed">{tip}</p>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <Button 
+              onClick={() => handleBooking("Consulta preventiva")}
+              size="lg" 
+              className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg"
+            >
+              Agendar consulta preventiva
+            </Button>
           </div>
         </div>
       </section>
