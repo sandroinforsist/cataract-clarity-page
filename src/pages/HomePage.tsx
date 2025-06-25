@@ -24,35 +24,51 @@ const HomePage = () => {
 
   const exams = [
     {
-      title: "Avaliação de Grau (Refração)",
-      description: "Para definirmos com precisão se você precisa de óculos e qual a lente ideal para o seu caso."
+      title: "Refração (Grau dos Óculos)",
+      description: "Avaliação precisa para determinar a necessidade de correção visual"
     },
     {
-      title: "Medição da Pressão Ocular (Tonometria)",
-      description: "Essencial para a prevenção do glaucoma, uma doença silenciosa que pode levar à cegueira."
+      title: "Pressão Intraocular",
+      description: "Medição da pressão dentro do olho para prevenção de doenças"
     },
     {
-      title: "Mapeamento de Retina",
-      description: "Um exame detalhado do \"fundo do olho\", que nos permite avaliar a saúde das veias, artérias e do seu nervo óptico."
+      title: "Glaucoma",
+      description: "Diagnóstico e acompanhamento desta doença silenciosa"
     },
     {
-      title: "Avaliação para Cirurgias",
-      description: "Se você pensa em se livrar dos óculos com a cirurgia refrativa ou precisa de uma cirurgia de catarata, fazemos todos os exames para garantir um procedimento seguro e eficaz."
+      title: "Laudos Oftalmológicos",
+      description: "Documentação médica para diversas finalidades"
+    },
+    {
+      title: "Teste do Olhinho",
+      description: "Exame fundamental para recém-nascidos e crianças"
+    },
+    {
+      title: "Fundo de Olho",
+      description: "Avaliação detalhada da retina e estruturas internas"
+    },
+    {
+      title: "Retinopatia Hipertensiva",
+      description: "Diagnóstico de alterações causadas pela pressão alta"
+    },
+    {
+      title: "Retinopatia Diabética",
+      description: "Detecção precoce de complicações do diabetes nos olhos"
     }
   ];
 
-  const treatments = [
+  const surgeries = [
     {
       title: "Cirurgia de Catarata",
-      description: "Substituímos a lente natural opaca do olho por uma nova, moderna e transparente, devolvendo a clareza e as cores à sua visão."
+      description: "Substituição da lente natural opaca por uma nova, devolvendo clareza à visão"
     },
     {
-      title: "Cirurgia Refrativa a Laser",
-      description: "Quer mais liberdade sem óculos? Este procedimento rápido e seguro pode corrigir miopia, astigmatismo e hipermetropia."
+      title: "Cirurgia de Pterígio",
+      description: "Remoção do crescimento anormal de tecido sobre a córnea"
     },
     {
-      title: "Tratamentos para Glaucoma e Doenças da Retina",
-      description: "Oferecemos desde o tratamento com colírios até procedimentos a laser para controlar doenças e preservar sua visão a longo prazo."
+      title: "Cirurgia de Pequenas Lesões Perioculares",
+      description: "Tratamento de lesões e alterações ao redor dos olhos"
     }
   ];
 
@@ -156,43 +172,57 @@ const HomePage = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {exams.map((exam, index) => (
               <Card key={index} className="p-6 bg-gradient-to-br from-teal-50 to-cyan-50 shadow-lg hover:shadow-xl transition-all duration-300">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{exam.title}</h3>
-                <p className="text-gray-700 leading-relaxed">{exam.description}</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{exam.title}</h3>
+                <p className="text-gray-700 leading-relaxed text-sm">{exam.description}</p>
               </Card>
             ))}
+          </div>
+          
+          <div className="text-center">
+            <Button 
+              onClick={() => handleBooking("Consulta para exames oftalmológicos")}
+              size="lg" 
+              className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg"
+            >
+              Agendar consulta para exames
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Seção 4: Soluções Modernas */}
+      {/* Seção 4: Cirurgias */}
       <section className="py-16 px-4 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <Zap className="mx-auto mb-6 text-blue-600" size={48} />
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Soluções Modernas para Você Voltar a Enxergar o Mundo com Nitidez
+              Cirurgias Oftalmológicas
             </h2>
             <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-              A oftalmologia evoluiu muito, e hoje o Dr. Carlos Coelho oferece tratamentos modernos e minimamente invasivos para as mais diversas condições. Nosso foco é encontrar a melhor solução para você e seu estilo de vida.
+              A oftalmologia evoluiu muito, e hoje o Dr. Carlos Coelho oferece procedimentos cirúrgicos modernos e minimamente invasivos. Nosso foco é encontrar a melhor solução para você e seu estilo de vida.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {treatments.map((treatment, index) => (
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            {surgeries.map((surgery, index) => (
               <Card key={index} className="p-6 bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{treatment.title}</h3>
-                <p className="text-gray-700 leading-relaxed mb-4">{treatment.description}</p>
-                <Button
-                  onClick={() => handleBooking(`Consulta sobre ${treatment.title.toLowerCase()}`)}
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 rounded-lg transition-colors duration-300"
-                >
-                  Saiba mais
-                </Button>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{surgery.title}</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">{surgery.description}</p>
               </Card>
             ))}
+          </div>
+          
+          <div className="text-center">
+            <Button 
+              onClick={() => handleBooking("Consulta sobre procedimentos cirúrgicos")}
+              size="lg" 
+              className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg"
+            >
+              Agendar consulta sobre cirurgias
+            </Button>
           </div>
         </div>
       </section>
