@@ -120,9 +120,7 @@ const HomePage = () => {
                 <Button onClick={() => handleBooking("Consulta oftalmológica geral")} size="lg" className="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   Agendar Consulta
                 </Button>
-                <Button variant="outline" size="lg" className="border-2 border-teal-600 text-teal-600 hover:bg-teal-50 px-8 py-6 text-lg font-semibold rounded-xl transition-all duration-300">
-                  Saiba Mais
-                </Button>
+                
               </div>
               
               {/* Stats */}
@@ -136,8 +134,8 @@ const HomePage = () => {
                   <div className="text-sm text-gray-600">Sucesso</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-teal-600">5+</div>
-                  <div className="text-sm text-gray-600">Anos</div>
+                  <div className="text-3xl font-bold text-teal-600">+5 Anos</div>
+                  <div className="text-sm text-gray-600"> Experiência</div>
                 </div>
               </div>
             </div>
@@ -181,12 +179,8 @@ const HomePage = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-6">
               <AlertTriangle className="text-orange-600" size={32} />
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Está na hora de agendar uma consulta?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Fique de olho nestes sinais. Um diagnóstico precoce faz toda a diferença!
-            </p>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Fique de olho nestes sinais</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Um diagnóstico precoce faz toda a diferença!</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -199,9 +193,7 @@ const HomePage = () => {
           </div>
           
           <div className="text-center">
-            <Button onClick={() => handleBooking("Consulta para avaliação de sintomas")} size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg">
-              Agende sua consulta aqui
-            </Button>
+            <Button onClick={() => handleBooking("Consulta para avaliação de sintomas")} size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg">Agende sua consulta</Button>
           </div>
         </div>
       </section>
